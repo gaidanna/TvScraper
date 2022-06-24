@@ -27,8 +27,7 @@ namespace TvScraperService.Infrastructure.Repository
                 {
                     Actor? actor = show.Cast[i];
                     var existingActor = _scraperDbContext.Actors
-                        .Where(b => b.TVMazeId == actor.TVMazeId)
-                        .FirstOrDefault();
+                        .FirstOrDefault(b => b.TVMazeId == actor.TVMazeId);
                     
                     if (existingActor != null)
                     {

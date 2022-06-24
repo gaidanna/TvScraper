@@ -1,4 +1,4 @@
-﻿namespace TvScraperService.Integration.Models
+﻿namespace TvScraperService.Integration.Dtos
 {
     public class PersonDto
     {

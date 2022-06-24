@@ -17,10 +17,10 @@ namespace TvScraperService.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetShowCasts([FromQuery] PaginationFilter filter)
         {
-            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+            filter.ValidatePaginationParams();
             var pagedData = (await _scraperService.GetShows())
-               .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
-               .Take(validFilter.PageSize)
+               .Skip((filter.PageNumber - 1) * filter.PageSize)
+               .Take(filter.PageSize)
                .ToList();
 
             return Ok(pagedData);

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using TvScraperService.Core.Models;
-using TvScraperService.Integration.Models;
+using TvScraperService.Integration.Dtos;
 
 namespace TvScraperService.Integration.Mappings
 {

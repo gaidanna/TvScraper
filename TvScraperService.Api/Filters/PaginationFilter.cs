@@ -2,17 +2,17 @@
 {
     public class PaginationFilter
     {
+        public const int MinPageNumber = 1;
+        public const int MinPageSize = 1;
+        public const int MaxPageSize = 10;
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
-        public PaginationFilter()
+
+        public void ValidatePaginationParams()
         {
-            this.PageNumber = 1;
-            this.PageSize = 10;
-        }
-        public PaginationFilter(int pageNumber, int pageSize)
-        {
-            this.PageNumber = pageNumber < 1 ? 1 : pageNumber;
-            this.PageSize = pageSize > 10 ? 10 : pageSize;
+            this.PageNumber = PageNumber < MinPageNumber ? MinPageNumber : PageNumber;
+            this.PageSize = PageSize > MaxPageSize || PageSize < MinPageSize 
+                ? MaxPageSize : PageSize;
         }
     }
 }
