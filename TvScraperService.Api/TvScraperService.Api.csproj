@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TvScraperService.Core\TvScraperService.Core.csproj" />
+    <ProjectReference Include="..\TvScraperService.Infrastructure\TvScraperService.Infrastructure.csproj" />
+    <ProjectReference Include="..\TvScraperService.Integration\TvScraperService.Integration.csproj" />
+  </ItemGroup>
+
+</Project>
